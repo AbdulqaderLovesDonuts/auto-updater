@@ -1,0 +1,29 @@
+[package]
+name = "auto-updater"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# Configuration
+toml = "0.7"
+serde = { version = "1.0", features = ["derive"] }
+serde_derive = "1.0"
+
+# HTTP Requests
+reqwest = { version = "0.11", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+
+# CLI
+clap = { version = "4.3", features = ["derive"] }
+ratatui = "0.24"
+crossterm = "0.27"
+
+# Logging
+log = "0.4"
+env_logger = "0.10"
+
+# Version Management
+semver = "1.0"
+
+# Error Handling
+thiserror = "1.0"
