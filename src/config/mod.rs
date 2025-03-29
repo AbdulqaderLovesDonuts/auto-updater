@@ -1,8 +1,8 @@
 // Configuration module definition
 
 // Expose public modules and types
-pub(crate) mod parser; // TOML configuration parsing
-pub(crate) mod schema; // Configuration data structures
+pub mod parser; // TOML configuration parsing
+pub mod schema; // Configuration data structures
 
 // Re-export key types and functions
 pub use parser::{generate_default_config, load_config, parse_config, validate_config};
