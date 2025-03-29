@@ -1,7 +1,7 @@
 use super::schema::{ProgramConfig, UpdateConfig};
 use anyhow::{Context, Result};
 use std::fs;
-use std::path::{Path, PathBuf};
+use std::path::Path;
 
 /// Parse configuration from a TOML file
 pub fn parse_config<P: AsRef<Path>>(path: P) -> Result<UpdateConfig> {
@@ -22,7 +22,7 @@ pub fn parse_config<P: AsRef<Path>>(path: P) -> Result<UpdateConfig> {
 }
 
 /// Validate the configuration
-fn validate_config(config: &UpdateConfig) -> Result<()> {
+pub fn validate_config(config: &UpdateConfig) -> Result<()> {
     // Check for duplicate program names
     let unique_names: std::collections::HashSet<_> =
         config.programs.iter().map(|p| &p.name).collect();

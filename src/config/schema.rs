@@ -1,13 +1,13 @@
 use serde::{Deserialize, Serialize};
-use std::path::PathBuff;
+use std::path::PathBuf;
 
 //we will have a global, program and update config
 
 //Global Configuration Settings
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct GlobalConfig {
-    update_interval: u64,
-    log_level: String,
+    pub update_interval: u64,
+    pub log_level: String,
 }
 
 //Program Config Settings
@@ -39,19 +39,19 @@ pub struct UpdateConfig {
 }
 
 /// Default configuration values
-fn default_update_interval() -> u64 {
+pub fn default_update_interval() -> u64 {
     3600 // 1 hour in seconds
 }
 
-fn default_log_level() -> String {
+pub fn default_log_level() -> String {
     "info".to_string()
 }
 
-fn default_update_channel() -> String {
+pub fn default_update_channel() -> String {
     "stable".to_string()
 }
 
-fn default_auto_update() -> bool {
+pub fn default_auto_update() -> bool {
     false
 }
 
