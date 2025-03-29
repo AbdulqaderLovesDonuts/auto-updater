@@ -1,5 +1,4 @@
 // src/updater/mod.rs
-
 // Import the UpdateConfig struct from the config module
 use auto_updater::config::schema::UpdateConfig;
 
